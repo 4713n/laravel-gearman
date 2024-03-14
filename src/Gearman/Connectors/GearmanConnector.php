@@ -1,8 +1,10 @@
-<?php namespace Pafelin\Gearman\Connectors;
+<?php
+
+namespace Link000\Gearman\Connectors;
 
 use \GearmanClient;
 use \GearmanWorker;
-use Pafelin\Gearman\GearmanQueue;
+use Link000\Gearman\GearmanQueue;
 use Illuminate\Queue\Connectors\ConnectorInterface;
 
 class GearmanConnector implements ConnectorInterface {

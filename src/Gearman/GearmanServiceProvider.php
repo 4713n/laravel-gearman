@@ -1,9 +1,11 @@
-<?php namespace Pafelin\Gearman;
+<?php
+
+namespace Link000\Gearman;
 
 use Illuminate\Queue\QueueServiceProvider as ServiceProvider;
-use Pafelin\Gearman\Connectors\GearmanConnector;
+use Link000\Gearman\Connectors\GearmanConnector;
 
-class GearmanServiceProvider extends ServiceProvider 
+class GearmanServiceProvider extends ServiceProvider
 {
     /**
      * Register the connectors on the queue manager.
@@ -14,7 +16,7 @@ class GearmanServiceProvider extends ServiceProvider
     public function registerConnectors($manager)
     {
         parent::registerConnectors($manager);
-        
+
         $this->registerGearmanConnector($manager);
     }
 

@@ -1,20 +1,24 @@
 {
-    "name": "pafelin/gearman",
-    "description": "Gearman provider for queues in laravel4",
+    "name": "link000/laravel-gearman",
+    "description": "Gearman provider laravel queues",
     "license" : "MIT",
     "authors": [
         {
             "name": "Pavel Genov",
             "email": "pavel@taskprocess.com"
+        },
+		{
+            "name": "Alexander Landori",
+            "email": "alexander.landori@gmail.com"
         }
     ],
     "require": {
         "php": ">=5.3.0",
-        "illuminate/support": "5.*|^6.0|^7.0"
+        "illuminate/support": "5.*|^6.0|^7.0|^10.*"
     },
     "autoload": {
         "psr-0": {
-            "Pafelin\\Gearman": "src/"
+            "Link000\\Gearman\\": "src/Gearman/"
         }
     },
     "minimum-stability": "dev"

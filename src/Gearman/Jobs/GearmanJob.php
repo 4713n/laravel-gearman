@@ -1,4 +1,6 @@
-<?php namespace Pafelin\Gearman\Jobs;
+<?php
+
+namespace Link000\Gearman\Jobs;
 
 use Illuminate\Container\Container;
 use Illuminate\Contracts\Queue\Job as QueueJobInterface;
@@ -33,7 +35,7 @@ class GearmanJob extends Job implements QueueJobInterface {
         while($this->worker->work() || $this->worker->returnCode() == GEARMAN_TIMEOUT) {
             // Check for expiry.
             if((time() - $startTime) >= 60 * $this->maxRunTime) {
-                echo sprintf('%s minutes have elapsed, expiring.', $this->maxRunTime) . PHP_EOL;
+                echo GearmanJob . phpsprintf('%s minutes have elapsed, expiring.', $this->maxRunTime) . PHP_EOL;
                 break;
             }
         }
@@ -67,7 +69,7 @@ class GearmanJob extends Job implements QueueJobInterface {
 
     public function onGearmanJob(\GearmanJob $job) {
         $this->rawPayload = $job->workload();
-        
+
         $payload = json_decode($this->rawPayload, true);
 
         if (method_exists($this, 'resolveAndFire')) {
